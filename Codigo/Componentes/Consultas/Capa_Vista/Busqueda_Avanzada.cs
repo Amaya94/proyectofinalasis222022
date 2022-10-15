@@ -1,26 +1,25 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.Odbc;
 
-
-namespace Capa_Vista
+namespace Capa_VistaConsultas
 {
     public partial class Busqueda_Avanzada : Form
     {
         //Conexion cn = new Conexion();
-        OdbcConnection cn = new OdbcConnection("Dsn=Colchoneria");
+        OdbcConnection cn = new OdbcConnection("Dsn=Colchoneria3");
 
         String tableN;
         String datobuscar = "";
-        String buscaren ="";
+        String buscaren = "";
         String cadenaB = "";
 
         public Busqueda_Avanzada()
@@ -49,67 +48,42 @@ namespace Capa_Vista
             cbox_columnas.Items.Clear();
         }
 
-        private void btn_CancelarBA_Click(object sender, EventArgs e)
+        private void btn_BuscarBA_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            DataTable dt = new DataTable();
+            try
+            {
+                string cadena = " SELECT  * FROM " + tableN;
+                OdbcDataAdapter datos = new OdbcDataAdapter(cadena, cn);
+                datos.Fill(dt);
 
-        public void btn_BuscarBA_Click(object sender, EventArgs e)
-        {
-            tableN = cbo_buscaren.Text;
-            BuscarT(tableN);
-        }
-
-        public void BuscarT(string tableN )
-        {
-
-                DataTable dt = new DataTable();
-                try
+                if (dt.Rows.Count > 0)
                 {
-                    string cadena = " SELECT  * FROM " + tableN;
-                    OdbcDataAdapter datos = new OdbcDataAdapter(cadena, cn);
-                    datos.Fill(dt);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        panelResultado.Visible = true;
-                        dgvDato.DataSource = dt;
-                    }
+                    panelResultado.Visible = true;
+                    dgvDato.DataSource = dt;
                 }
-                catch
-                {
-                    String textalert = " Error al consultar Tabla ";
-                    MessageBox.Show(textalert);
-                }
-        }
-
-        private void Busqueda_Avanzada_Load(object sender, EventArgs e)
-        {
-
+            }
+            catch
+            {
+                String textalert = " Error al consultar Tabla ";
+                MessageBox.Show(textalert);
+            }
         }
 
         private void pnl_BuscarBA_Paint(object sender, PaintEventArgs e)
         {
-            cbox_columnas.Items.Clear();
-        }
-
-        private void panelResultado_Paint(object sender, PaintEventArgs e)
-        {
             btn_BuscarBA.Enabled = false;
-            CargarColumnas(cbox_columnas , tableN);
+            CargarColumnas(cbox_columnas, tableN);
         }
-
-
 
         private void bnt_buscaPor_Click(object sender, EventArgs e)
         {
             datobuscar = txt_BuscaPor.Text;
             buscaren = cbox_columnas.Text;
 
-            BuscaPor(datobuscar , buscaren , tableN);
+            BuscaPor(datobuscar, buscaren, tableN);
             CargarColumnas(cbox_columnas, tableN);
             cadenaB = "";
-
         }
 
         public void CargarColumnas(ComboBox cbox_columnas, String tableN)
@@ -143,7 +117,7 @@ namespace Capa_Vista
                     DataTable dt = new DataTable();
                     cadenaB = "";
                     cn.Open();
-                    cadenaB = " SELECT * FROM " + tableN + " WHERE " + buscaren + " LIKE ('%" + datobuscar.Trim() +"%')";
+                    cadenaB = " SELECT * FROM " + tableN + " WHERE " + buscaren + " LIKE ('%" + datobuscar.Trim() + "%')";
                     lbl_cadena.Text = "Buscando : " + datobuscar + " En Columna : " + buscaren;
                     OdbcDataAdapter datos = new OdbcDataAdapter(cadenaB, cn);
                     datos.Fill(dt);
@@ -159,7 +133,7 @@ namespace Capa_Vista
                         cadenaB = "";
                         datobuscar = "";
                         buscaren = "";
-                        txt_BuscaPor.Text= "";
+                        txt_BuscaPor.Text = "";
                     }
                 }
                 catch
@@ -174,16 +148,6 @@ namespace Capa_Vista
             datobuscar = "";
             buscaren = "";
             txt_BuscaPor.Text = "";
-        }
-
-        private void dgvDato_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void cbo_buscaren_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

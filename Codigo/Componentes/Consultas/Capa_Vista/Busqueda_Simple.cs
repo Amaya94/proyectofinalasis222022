@@ -11,29 +11,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Capa_Vista
+namespace Capa_VistaConsultas
 {
-    public partial class Busqueda_Avanzada : Form
+    public partial class Busqueda_Simple : Form
     {
         //Conexion cn = new Conexion();
-        OdbcConnection cn = new OdbcConnection("Dsn=Colchoneria");
+        OdbcConnection cn = new OdbcConnection("Dsn=Colchoneria2");
 
-        String tableN;
+
+        public String tableN1 ="";
         String datobuscar = "";
         String buscaren ="";
         String cadenaB = "";
 
-        public Busqueda_Avanzada()
+        public Busqueda_Simple()
         {
             InitializeComponent();
-            CargarTablas();
+            panelResultado.Visible = true;
+            /*tableN = label2.Text;*/
+           
+           
         }
         public void CargarTablas()
         {
+            /*
             cn.Open();
             cbo_buscaren.DataSource = cn.GetSchema("Tables");
             cbo_buscaren.DisplayMember = "TABLE_NAME";
-            cn.Close();
+            cn.Close();*/
 
         }
 
@@ -44,9 +49,9 @@ namespace Capa_Vista
 
         private void bnt_nuevaBA_Click(object sender, EventArgs e)
         {
-            panelResultado.Visible = false;
+            /*panelResultado.Visible = false;
             btn_BuscarBA.Enabled = true;
-            cbox_columnas.Items.Clear();
+            cbox_columnas.Items.Clear();*/
         }
 
         private void btn_CancelarBA_Click(object sender, EventArgs e)
@@ -56,13 +61,13 @@ namespace Capa_Vista
 
         public void btn_BuscarBA_Click(object sender, EventArgs e)
         {
-            tableN = cbo_buscaren.Text;
-            BuscarT(tableN);
+            /*tableN = cbo_buscaren.Text;
+            BuscarT(tableN);*/
         }
 
-        public void BuscarT(string tableN )
+        public void BuscarT()
         {
-
+            string tableN = tableN1;
                 DataTable dt = new DataTable();
                 try
                 {
@@ -95,8 +100,8 @@ namespace Capa_Vista
 
         private void panelResultado_Paint(object sender, PaintEventArgs e)
         {
-            btn_BuscarBA.Enabled = false;
-            CargarColumnas(cbox_columnas , tableN);
+           /* btn_BuscarBA.Enabled = false;*/
+            CargarColumnas(cbox_columnas , tableN1);
         }
 
 
@@ -106,8 +111,8 @@ namespace Capa_Vista
             datobuscar = txt_BuscaPor.Text;
             buscaren = cbox_columnas.Text;
 
-            BuscaPor(datobuscar , buscaren , tableN);
-            CargarColumnas(cbox_columnas, tableN);
+            BuscaPor(datobuscar , buscaren , tableN1);
+            CargarColumnas(cbox_columnas, tableN1);
             cadenaB = "";
 
         }

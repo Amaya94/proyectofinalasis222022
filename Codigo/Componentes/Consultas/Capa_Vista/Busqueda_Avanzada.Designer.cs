@@ -1,5 +1,5 @@
 ﻿
-namespace Capa_Vista
+namespace Capa_VistaConsultas
 {
     partial class Busqueda_Avanzada
     {
@@ -29,12 +29,6 @@ namespace Capa_Vista
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnl_BuscarBA = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_BuscarBA = new FontAwesome.Sharp.IconButton();
-            this.cbo_buscaren = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvDato = new System.Windows.Forms.DataGridView();
             this.panelResultado = new System.Windows.Forms.Panel();
             this.lbl_cadena = new System.Windows.Forms.Label();
             this.cbox_columnas = new System.Windows.Forms.ComboBox();
@@ -45,82 +39,16 @@ namespace Capa_Vista
             this.btn_SalirBA = new FontAwesome.Sharp.IconButton();
             this.bnt_nuevaBA = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnl_BuscarBA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDato)).BeginInit();
+            this.dgvDato = new System.Windows.Forms.DataGridView();
+            this.pnl_BuscarBA = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_BuscarBA = new FontAwesome.Sharp.IconButton();
+            this.cbo_buscaren = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelResultado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDato)).BeginInit();
+            this.pnl_BuscarBA.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnl_BuscarBA
-            // 
-            this.pnl_BuscarBA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.pnl_BuscarBA.Controls.Add(this.label4);
-            this.pnl_BuscarBA.Controls.Add(this.btn_BuscarBA);
-            this.pnl_BuscarBA.Controls.Add(this.cbo_buscaren);
-            this.pnl_BuscarBA.Controls.Add(this.label2);
-            this.pnl_BuscarBA.Location = new System.Drawing.Point(12, 27);
-            this.pnl_BuscarBA.Name = "pnl_BuscarBA";
-            this.pnl_BuscarBA.Size = new System.Drawing.Size(669, 142);
-            this.pnl_BuscarBA.TabIndex = 9;
-            this.pnl_BuscarBA.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_BuscarBA_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(275, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 20);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Busqueda Avanzada";
-            // 
-            // btn_BuscarBA
-            // 
-            this.btn_BuscarBA.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btn_BuscarBA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(180)))), ((int)(((byte)(227)))));
-            this.btn_BuscarBA.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_BuscarBA.IconSize = 60;
-            this.btn_BuscarBA.Location = new System.Drawing.Point(588, 59);
-            this.btn_BuscarBA.Name = "btn_BuscarBA";
-            this.btn_BuscarBA.Size = new System.Drawing.Size(64, 68);
-            this.btn_BuscarBA.TabIndex = 31;
-            this.btn_BuscarBA.Text = "Buscar";
-            this.btn_BuscarBA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_BuscarBA.UseVisualStyleBackColor = true;
-            this.btn_BuscarBA.Click += new System.EventHandler(this.btn_BuscarBA_Click);
-            // 
-            // cbo_buscaren
-            // 
-            this.cbo_buscaren.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_buscaren.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_buscaren.FormattingEnabled = true;
-            this.cbo_buscaren.Location = new System.Drawing.Point(261, 85);
-            this.cbo_buscaren.Name = "cbo_buscaren";
-            this.cbo_buscaren.Size = new System.Drawing.Size(212, 24);
-            this.cbo_buscaren.TabIndex = 7;
-            this.cbo_buscaren.SelectedIndexChanged += new System.EventHandler(this.cbo_buscaren_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(117, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Seleccione Tabla :";
-            // 
-            // dgvDato
-            // 
-            this.dgvDato.AllowUserToAddRows = false;
-            this.dgvDato.AllowUserToDeleteRows = false;
-            this.dgvDato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDato.Location = new System.Drawing.Point(14, 101);
-            this.dgvDato.Name = "dgvDato";
-            this.dgvDato.RowHeadersWidth = 51;
-            this.dgvDato.Size = new System.Drawing.Size(638, 147);
-            this.dgvDato.TabIndex = 0;
-            this.dgvDato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDato_CellContentClick);
             // 
             // panelResultado
             // 
@@ -135,12 +63,11 @@ namespace Capa_Vista
             this.panelResultado.Controls.Add(this.bnt_nuevaBA);
             this.panelResultado.Controls.Add(this.label3);
             this.panelResultado.Controls.Add(this.dgvDato);
-            this.panelResultado.Location = new System.Drawing.Point(12, 175);
+            this.panelResultado.Location = new System.Drawing.Point(0, 148);
             this.panelResultado.Name = "panelResultado";
             this.panelResultado.Size = new System.Drawing.Size(669, 325);
-            this.panelResultado.TabIndex = 11;
+            this.panelResultado.TabIndex = 13;
             this.panelResultado.Visible = false;
-            this.panelResultado.Paint += new System.Windows.Forms.PaintEventHandler(this.panelResultado_Paint);
             // 
             // lbl_cadena
             // 
@@ -245,43 +172,111 @@ namespace Capa_Vista
             this.label3.TabIndex = 6;
             this.label3.Text = "Datos de Busqueda";
             // 
+            // dgvDato
+            // 
+            this.dgvDato.AllowUserToAddRows = false;
+            this.dgvDato.AllowUserToDeleteRows = false;
+            this.dgvDato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDato.Location = new System.Drawing.Point(14, 101);
+            this.dgvDato.Name = "dgvDato";
+            this.dgvDato.RowHeadersWidth = 51;
+            this.dgvDato.Size = new System.Drawing.Size(638, 147);
+            this.dgvDato.TabIndex = 0;
+            // 
+            // pnl_BuscarBA
+            // 
+            this.pnl_BuscarBA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.pnl_BuscarBA.Controls.Add(this.label4);
+            this.pnl_BuscarBA.Controls.Add(this.btn_BuscarBA);
+            this.pnl_BuscarBA.Controls.Add(this.cbo_buscaren);
+            this.pnl_BuscarBA.Controls.Add(this.label2);
+            this.pnl_BuscarBA.Location = new System.Drawing.Point(0, 0);
+            this.pnl_BuscarBA.Name = "pnl_BuscarBA";
+            this.pnl_BuscarBA.Size = new System.Drawing.Size(669, 142);
+            this.pnl_BuscarBA.TabIndex = 12;
+            this.pnl_BuscarBA.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_BuscarBA_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(275, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 20);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Busqueda Avanzada";
+            // 
+            // btn_BuscarBA
+            // 
+            this.btn_BuscarBA.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btn_BuscarBA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(180)))), ((int)(((byte)(227)))));
+            this.btn_BuscarBA.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_BuscarBA.IconSize = 60;
+            this.btn_BuscarBA.Location = new System.Drawing.Point(588, 59);
+            this.btn_BuscarBA.Name = "btn_BuscarBA";
+            this.btn_BuscarBA.Size = new System.Drawing.Size(64, 68);
+            this.btn_BuscarBA.TabIndex = 31;
+            this.btn_BuscarBA.Text = "Buscar";
+            this.btn_BuscarBA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_BuscarBA.UseVisualStyleBackColor = true;
+            this.btn_BuscarBA.Click += new System.EventHandler(this.btn_BuscarBA_Click);
+            // 
+            // cbo_buscaren
+            // 
+            this.cbo_buscaren.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_buscaren.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_buscaren.FormattingEnabled = true;
+            this.cbo_buscaren.Location = new System.Drawing.Point(261, 85);
+            this.cbo_buscaren.Name = "cbo_buscaren";
+            this.cbo_buscaren.Size = new System.Drawing.Size(212, 24);
+            this.cbo_buscaren.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(117, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Seleccione Tabla :";
+            // 
             // Busqueda_Avanzada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(702, 512);
+            this.ClientSize = new System.Drawing.Size(667, 472);
             this.Controls.Add(this.panelResultado);
             this.Controls.Add(this.pnl_BuscarBA);
             this.Name = "Busqueda_Avanzada";
-            this.Text = "Busqueda Avanzada";
-            this.Load += new System.EventHandler(this.Busqueda_Avanzada_Load);
-            this.pnl_BuscarBA.ResumeLayout(false);
-            this.pnl_BuscarBA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDato)).EndInit();
+            this.Text = "Busqueda Simple";
             this.panelResultado.ResumeLayout(false);
             this.panelResultado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDato)).EndInit();
+            this.pnl_BuscarBA.ResumeLayout(false);
+            this.pnl_BuscarBA.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_BuscarBA;
-        private System.Windows.Forms.ComboBox cbo_buscaren;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvDato;
         private System.Windows.Forms.Panel panelResultado;
-        private FontAwesome.Sharp.IconButton btn_BuscarBA;
-        private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconButton btn_SalirBA;
-        private FontAwesome.Sharp.IconButton bnt_nuevaBA;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_cadena;
+        private System.Windows.Forms.ComboBox cbox_columnas;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_BuscaPor;
         private FontAwesome.Sharp.IconButton bnt_buscaPor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbox_columnas;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_cadena;
+        private FontAwesome.Sharp.IconButton btn_SalirBA;
+        private FontAwesome.Sharp.IconButton bnt_nuevaBA;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvDato;
+        private System.Windows.Forms.Panel pnl_BuscarBA;
+        private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton btn_BuscarBA;
+        private System.Windows.Forms.ComboBox cbo_buscaren;
+        private System.Windows.Forms.Label label2;
     }
 }
