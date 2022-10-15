@@ -63,7 +63,7 @@ namespace Capa_VistaConsultas
             this.panelResultado.Controls.Add(this.bnt_nuevaBA);
             this.panelResultado.Controls.Add(this.label3);
             this.panelResultado.Controls.Add(this.dgvDato);
-            this.panelResultado.Location = new System.Drawing.Point(0, 148);
+            this.panelResultado.Location = new System.Drawing.Point(12, 162);
             this.panelResultado.Name = "panelResultado";
             this.panelResultado.Size = new System.Drawing.Size(669, 325);
             this.panelResultado.TabIndex = 13;
@@ -191,7 +191,7 @@ namespace Capa_VistaConsultas
             this.pnl_BuscarBA.Controls.Add(this.btn_BuscarBA);
             this.pnl_BuscarBA.Controls.Add(this.cbo_buscaren);
             this.pnl_BuscarBA.Controls.Add(this.label2);
-            this.pnl_BuscarBA.Location = new System.Drawing.Point(0, 0);
+            this.pnl_BuscarBA.Location = new System.Drawing.Point(12, 12);
             this.pnl_BuscarBA.Name = "pnl_BuscarBA";
             this.pnl_BuscarBA.Size = new System.Drawing.Size(669, 142);
             this.pnl_BuscarBA.TabIndex = 12;
@@ -246,7 +246,8 @@ namespace Capa_VistaConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 472);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(694, 499);
             this.Controls.Add(this.panelResultado);
             this.Controls.Add(this.pnl_BuscarBA);
             this.Name = "Busqueda_Avanzada";
