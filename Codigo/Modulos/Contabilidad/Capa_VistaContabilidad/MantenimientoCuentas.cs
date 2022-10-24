@@ -1,8 +1,4 @@
-﻿/*Diana Victores
- 9959-19-1471
- mantenimiento clases de cuentas*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,18 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Capa_VistaContabilidad
-    
 {
-    public partial class MantenimientoClasesCuentas : Form
+    public partial class MantenimientoCuentas : Form
     {
-        public MantenimientoClasesCuentas()
+        public MantenimientoCuentas()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

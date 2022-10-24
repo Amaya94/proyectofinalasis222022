@@ -12,10 +12,26 @@ namespace Capa_VistaContabilidad
 {
     public partial class Nuevo_MDI : Form
     {
+        Seguridad_Controlador.Controlador cnc = new Seguridad_Controlador.Controlador
+            ();
         public Nuevo_MDI()
         {
             InitializeComponent();
             customizeDesing();
+            Button[] apps = { btn_mantClaseCtas };
+            cnc.deshabilitarApps(apps);
+            //mante clases
+            cnc.getAccesoApp (8002,apps[0]);
+            //mante tipo poliza contable
+            cnc.getAccesoApp(8003, apps[0]);
+            //mante tipo cuenta
+            cnc.getAccesoApp(8004, apps[0]);
+            //mante activos
+            cnc.getAccesoApp(8005, apps[0]);
+            //mante estado financiero
+            cnc.getAccesoApp(8006, apps[0]);
+            
+
         }
         private void customizeDesing()
         {
@@ -118,7 +134,7 @@ namespace Capa_VistaContabilidad
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Activos activos = new Activos();
+            MantenimientoActivos activos = new MantenimientoActivos();
             activos.MdiParent = this;
             activos.StartPosition = FormStartPosition.CenterScreen;
             activos.Show();
@@ -327,7 +343,7 @@ namespace Capa_VistaContabilidad
 
         private void btn_mantPC_Click(object sender, EventArgs e)
         {
-            MantenimientoPolizaContable mantpol = new MantenimientoPolizaContable();
+            MantenimientoDetallePolizaContable mantpol = new MantenimientoDetallePolizaContable();
             mantpol.MdiParent = this;
             mantpol.StartPosition = FormStartPosition.CenterScreen;
             mantpol.Show();
@@ -336,7 +352,7 @@ namespace Capa_VistaContabilidad
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            MantenimientoClasesCuentas mantclas = new MantenimientoClasesCuentas();
+            MantenimientoEncabezadoCuentas mantclas = new MantenimientoEncabezadoCuentas();
             mantclas.MdiParent = this;
             mantclas.StartPosition = FormStartPosition.CenterScreen;
             mantclas.Show();
@@ -350,7 +366,53 @@ namespace Capa_VistaContabilidad
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Presupuesto mantclas = new Presupuesto();
+            mantclas.MdiParent = this;
+            mantclas.StartPosition = FormStartPosition.CenterScreen;
+            mantclas.Show();
+            hideSubMenu();
+        }
 
+        private void bnt_MantAct_Click(object sender, EventArgs e)
+        {
+            MantenimientoActivos mantclas = new MantenimientoActivos();
+            mantclas.MdiParent = this;
+            mantclas.StartPosition = FormStartPosition.CenterScreen;
+            mantclas.Show();
+            hideSubMenu();
+        }
+
+        private void btn_MantEFinancieros_Click(object sender, EventArgs e)
+        {
+            EstadosFinancieros mantclas = new EstadosFinancieros();
+            mantclas.MdiParent = this;
+            mantclas.StartPosition = FormStartPosition.CenterScreen;
+            mantclas.Show();
+            hideSubMenu();
+        }
+
+        private void btn_MantTCuenta_Click(object sender, EventArgs e)
+        {
+            MantenimientoTipodeCuentas mantclas = new MantenimientoTipodeCuentas();
+            mantclas.MdiParent = this;
+            mantclas.StartPosition = FormStartPosition.CenterScreen;
+            mantclas.Show();
+            hideSubMenu();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            DetallePoliza mantclas = new DetallePoliza();
+
+            mantclas.MdiParent = this;
+            mantclas.StartPosition = FormStartPosition.CenterScreen;
+            mantclas.Show();
+            hideSubMenu();
         }
     }
 }
